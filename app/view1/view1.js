@@ -93,7 +93,7 @@ angular.module('myApp.view1', ['ngRoute'])
             var text = "";
 
             for (var i = 0; i < 3; i++) {
-                text += possible.charAt(Math.floor(Math.random() * (possible.length+1)));
+                text += possible.charAt(Math.floor(Math.random() * (possible.length)));
             }
 
             if (!wellCodes[text]) {
