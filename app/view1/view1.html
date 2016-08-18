@@ -1,0 +1,67 @@
+<div layout="column" ng-cloak>
+    <md-content layout-padding>
+        <form name="userForm">
+            <div layout-gt-sm="row">
+                <md-input-container flex="20">
+                    <label>Location (Row)</label>
+                    <md-select ng-model="inputWell.row">
+                        <md-option ng-repeat="(wpRow, wpCol) in wellPlate" value="{{wpRow}}">{{wpRow}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="20">
+                    <label>Location (Column)</label>
+                    <md-select ng-model="inputWell.col">
+                        <md-option ng-repeat="colObj in wellPlate.A" value="{{colObj.col}}">{{colObj.col}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="20">
+                    <label>Reaction Time (Minutes)</label>
+                    <input name="reactionTime" ng-model="inputWell.reactionTime" type="number" min="5" max="90"/>
+                    <div class="hint"
+                         ng-if="!userForm.reactionTime.$error.min && !userForm.reactionTime.$error.max">
+                        min 5 minutes, max 90 minutes
+                    </div>
+                    <div ng-messages="userForm.reactionTime.$error">
+                        <div ng-message="min">Minimum 5 minutes</div>
+                        <div ng-message="max">Maximum 90 minutes</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Sample Name</label>
+                    <input md-maxlength="64" name="name" ng-model="inputWell.name" />
+                    <div class="hint" ng-if="!userForm.name.$error.md-maxlength">alpha numeric only</div>
+                    <div ng-messages="userForm.name.$error">
+                        <div ng-message="md-maxlength">Sample name can not have more than 64 characters.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-button ng-click="addInputValues()" ng-disabled="!inputWell.row || !inputWell.col"
+                           class="md-raised md-primary">Add</md-button>
+                <md-button ng-click="removeInputValues()" ng-disabled="!inputWell.row || !inputWell.col"
+                           class="md-raised md-primary">Remove</md-button>
+            </div>
+
+            <div layout-gt-sm="row">
+                <div style="border: 2px solid #ffffff">
+                    <md-content layout-padding>
+                        <div ng-repeat="(wpRow, wpCol) in wellPlate" layout-gt-xs="row">
+                            <div>{{wpRow}}</div>
+                            <div ng-repeat="wellCell in wpCol" flex ng-click="selectWell(wpRow, $index)"
+                                 style="margin-right: 5px">
+                                <div ng-if="wpRow=='A'">{{$index+1}}</div>
+                                <div pcr-well="wellCell.location" pcr-well-color="wellCell.color" ></div>
+                            </div>
+                        </div>
+                    </md-content>
+                </div>
+
+                <div style="font-size: smaller">
+                    <pre>Input {{wellPlate|json}}</pre>
+                    <pre>Input {{inputWell|json}}</pre>
+                    <!--<pre>React {{userForm.reactionTime|json}}</pre><-->
+                </div>
+            </div>
+        </form>
+    </md-content>
+</div>
