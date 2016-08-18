@@ -1,35 +1,40 @@
 /* app css stylesheet */
 
-.menu {
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
-}
-
-.menu:before {
-    content: "[";
-}
-
-.menu:after {
-    content: "]";
-}
-
-.menu > li {
-    display: inline;
-}
-
-.menu > li:before {
-    content: "|";
-    padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-    content: "";
-    padding: 0;
+.footer {
+    text-align: center;
+    font-size: small;
 }
 
 .hint {
     font-size: small;
 
+}
+
+.firstPlateRowColHdr {
+    margin-top: 45px !important;
+}
+.plateRowHdr {
+    vertical-align: middle;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 5px;
+    margin-top: 15px;
+}
+.plateColHdr {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.wellContent {
+    text-align: center;
+    padding-top: 20px
+}
+.wellReactionTime {
+    position: relative;
+    bottom: 0.5em;
+    color: #000000;
+    font-size: 0.9em;
+    padding-left: 3px;
 }

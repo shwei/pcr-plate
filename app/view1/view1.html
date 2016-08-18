@@ -43,24 +43,27 @@
             </div>
 
             <div layout-gt-sm="row">
-                <div style="border: 2px solid #ffffff">
-                    <md-content layout-padding>
+                <div>
+                    <md-content layout-padding style="border: 2px solid #555555">
                         <div ng-repeat="(wpRow, wpCol) in wellPlate" layout-gt-xs="row">
-                            <div>{{wpRow}}</div>
-                            <div ng-repeat="wellCell in wpCol" flex ng-click="selectWell(wpRow, $index)"
-                                 style="margin-right: 5px">
-                                <div ng-if="wpRow=='A'">{{$index+1}}</div>
-                                <div pcr-well="wellCell.location" pcr-well-color="wellCell.color" ></div>
+
+                            <div flex="5" ng-class="{'firstPlateRowColHdr': wpRow=='A'}" class="plateRowHdr">{{wpRow}}</div>
+
+                            <div flex ng-repeat="wellCell in wpCol" ng-click="selectWell(wpRow, $index)" style="margin: 0 10px">
+                                <div ng-if="wpRow=='A'" class="plateColHdr">{{$index+1}}</div>
+                                <div pcr-well="wellCell.code"
+                                     pcr-well-color="wellCell.color"
+                                     pcr-well-reaction-time="wellCell.reactionTime"></div>
                             </div>
                         </div>
                     </md-content>
                 </div>
-
-                <div style="font-size: smaller">
-                    <pre>Input {{wellPlate|json}}</pre>
-                    <pre>Input {{inputWell|json}}</pre>
+                <!-- comment out; was for debug only -->
+                <!--<div style="font-size: smaller">  -->
+                    <!--<pre>Plate {{wellPlate|json}}</pre>-->
+                    <!--<pre>Input {{inputWell|json}}</pre>-->
                     <!--<pre>React {{userForm.reactionTime|json}}</pre><-->
-                </div>
+                <!--</div>-->
             </div>
         </form>
     </md-content>
