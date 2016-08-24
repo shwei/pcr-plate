@@ -2,7 +2,7 @@
   "name": "pcr-plate",
   "description": "A sample project for PCR plate",
   "version": "1.0.0",
-  "homepage": "https://github.com/shwei/pacbio",
+  "homepage": "https://github.com/shwei/pcr-plate",
   "license": "MIT",
   "private": true,
   "dependencies": {

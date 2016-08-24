@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "A sample project for PCR plate",
-  "repository": "https://github.com/shwei/pacbio",
+  "repository": "https://github.com/pcr-plate/pacbio",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
