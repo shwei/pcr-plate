@@ -1,6 +1,6 @@
 {
-  "name": "pacbio",
-  "description": "A sample project for PacBio",
+  "name": "pcr-plate",
+  "description": "A sample project for PCR plate",
   "version": "1.0.0",
   "homepage": "https://github.com/shwei/pacbio",
   "license": "MIT",

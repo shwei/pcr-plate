@@ -2,19 +2,20 @@
     <md-content layout-padding>
         <form name="userForm">
             <div layout-gt-sm="row">
-                <md-input-container flex="20">
+                <md-input-container flex="15">
                     <label>Location (Row)</label>
                     <md-select ng-model="inputWell.row">
                         <md-option ng-repeat="(wpRow, wpCol) in wellPlate" value="{{wpRow}}">{{wpRow}}</md-option>
                     </md-select>
                 </md-input-container>
-                <md-input-container flex="20">
+                <md-input-container flex="15">
                     <label>Location (Column)</label>
                     <md-select ng-model="inputWell.col">
                         <md-option ng-repeat="colObj in wellPlate.A" value="{{colObj.col}}">{{colObj.col}}</md-option>
                     </md-select>
                 </md-input-container>
-                <md-input-container class="md-block" flex-gt-sm="20">
+
+                <md-input-container class="md-block" flex-gt-sm="20" flex-offset="5">
                     <label>Reaction Time (Minutes)</label>
                     <input name="reactionTime" ng-model="inputWell.reactionTime" type="number" min="5" max="90"/>
                     <div class="hint"

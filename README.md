@@ -1,4 +1,4 @@
-# PacBio Exercise
+# PCR Plate
 
 The sample client-side app allows a scientist to input sample information associated with a 96-well PCR plate:
 ![PCR Plate alt](http://www.cellsignet.com/media/plates/96.jpg "PCR Plate")
