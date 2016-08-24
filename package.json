@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "pacbio",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "1.0.0",
+  "description": "A sample project for PacBio",
+  "repository": "https://github.com/shwei/pacbio",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
