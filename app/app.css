@@ -27,6 +27,12 @@
     font-weight: bolder;
 }
 
+.well {
+    border: 2px solid #000000;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
 .wellContent {
     text-align: center;
     padding-top: 20px
@@ -36,5 +42,5 @@
     bottom: 0.5em;
     color: #000000;
     font-size: 0.9em;
-    padding-left: 3px;
+    padding-left: 2px;
 }
