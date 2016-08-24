@@ -28,17 +28,27 @@
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Sample Name</label>
-                    <input md-maxlength="64" name="name" ng-model="inputWell.name" />
-                    <div class="hint" ng-if="!userForm.name.$error.md-maxlength">alpha numeric only</div>
+                    <input ng-model="inputName" md-maxlength="nameMaxLength" ng-pattern="/^[\w+]{1,64}$/" name="name"/>
+                    <div class="hint"
+                         ng-if="!userForm.name.$error.md-maxlength && !userForm.name.$error.pattern">
+                        alphanumeric only
+                    </div>
                     <div ng-messages="userForm.name.$error">
                         <div ng-message="md-maxlength">Sample name can not have more than 64 characters.</div>
+                        <div ng-message="pattern">Letters and numbers only.</div>
                     </div>
                 </md-input-container>
             </div>
             <div layout-gt-sm="row">
-                <md-button ng-click="addInputValues()" ng-disabled="!inputWell.row || !inputWell.col"
+                <md-button ng-click="addInputValues()"
+                           ng-disabled="!inputWell.row || !inputWell.col ||
+                           userForm.reactionTime.$error.min || userForm.reactionTime.$error.max ||
+                           userForm.name.$error.md-maxlength || userForm.name.$error.pattern"
                            class="md-raised md-primary">Add</md-button>
-                <md-button ng-click="removeInputValues()" ng-disabled="!inputWell.row || !inputWell.col"
+                <md-button ng-click="removeInputValues()"
+                           ng-disabled="!inputWell.row || !inputWell.col ||
+                           userForm.reactionTime.$error.min || userForm.reactionTime.$error.max ||
+                           userForm.name.$error.md-maxlength || userForm.name.$error.pattern"
                            class="md-raised md-primary">Remove</md-button>
             </div>
 
@@ -59,9 +69,9 @@
                     </md-content>
                 </div>
                 <!-- comment out; was for debug only -->
-                <!--<div style="font-size: smaller">  -->
+                <!--<div style="font-size: smaller">-->
                     <!--<pre>Plate {{wellPlate|json}}</pre>-->
-                    <!--<pre>Input {{inputWell|json}}</pre>-->
+                    <!--<pre>Input {{ inputWell|json}}</pre>-->
                     <!--<pre>React {{userForm.reactionTime|json}}</pre><-->
                 <!--</div>-->
             </div>
